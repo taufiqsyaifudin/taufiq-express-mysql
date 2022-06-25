@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const port = process.env.PORT || 3000;
 const productRouter  = require('./app/product/routes');
 const productRouterV2  = require('./app/product_v2/routes');
 const logger = require('morgan');
@@ -16,11 +17,9 @@ app.use((req, res, next) => {
   res.send({
     status: 'failed',
     message: 'Resource' + req.originalUrl + ' Not Found'
-  })
-})
+  });
+});
 
-const PORT = process.env.PORT || 5000;
-app.listen(
-  PORT,
-  console.log(`app running in ${process.env.NODE_ENV} on ${PORT}`)
-);
+app.listen(port, () => {
+  console.log(`app running in http://localhost:${port}`);
+});
