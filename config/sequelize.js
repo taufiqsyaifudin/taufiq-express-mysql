@@ -2,7 +2,7 @@ const {Sequelize} = require('sequelize');
 
 const sequelize = new Sequelize({
   database: 'eduwork-cruds-v2',
-  host: 'localhost',
+  host: '127.0.0.1',
   username: 'root',
   password: 'root',
   dialect: 'mysql'
