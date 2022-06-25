@@ -18,4 +18,9 @@ app.use((req, res, next) => {
     message: 'Resource' + req.originalUrl + ' Not Found'
   })
 })
-app.listen(3000, () => console.log('Server: http://localhost:3000'))
+
+const PORT = process.env.PORT || 3000;
+app.listen(
+  PORT,
+  console.log(`app running in ${process.env.NODE_ENV} on ${PORT}`)
+);
