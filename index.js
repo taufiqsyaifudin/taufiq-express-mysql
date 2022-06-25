@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3306;
 const productRouter  = require('./app/product/routes');
 const productRouterV2  = require('./app/product_v2/routes');
 const logger = require('morgan');
